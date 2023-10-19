@@ -7,11 +7,20 @@ class Bicho {
 	
 	var property position
 
-	method image() = "bicho.png"
+	method image() = "assets/bicho.png"
 	
-	method recibeAtaque() {vida -= 1}
+	/*method recibeAtaque() {
+		if(position == zanahoria.position){
+			vida-=1
+		}
+		vida -= 1
+	}*/
+	
+	method recibeDanio() {
+		vida -=1
+	}
 
-	
+	method morir() = if (vida == 0) position = game.at(30,30) else position
 }
 
 const bicho1 = new Bicho(position = game.at(20,14))

@@ -3,11 +3,14 @@ import wollok.game.*
 object conejo {
 	
 	var corazones = 3
+	var property position = game.at(0,0)
+	method municion() = [zanahoria, zanahoria, zanahoria, zanahoria]
 	
-	var property position = game.at(1,1)
-	
-	method recibeDanio() {corazones -=1
+	method recibeDanio() {
+		corazones -= 1
+		//corazon1.image() = "corazon_perdido.png"    "como cambio el color
 		
+		position = game.at(0,0)
 	}
 	
 	method moverseHaciaArriba(){
@@ -29,22 +32,33 @@ object conejo {
 	
 	method image() = "assets/conejo.png"
 	
-	//method vida() = "assets/corazones" + corazones + ".png"
-	
 	
 }
- /* ¿Como hacer para que se mueva en loop?
-object arma {
+
+object zanahoria {
 	
 	var property position = conejo.position()
 	
-	method image() = "bala.png"
+	method image() = "assets/bala.png"
 	
-	method disparar(){
-		self.position()
+	method dispararHaciaArriba(){
+		self.position(position.up(1))
 	}
 	
-}*/
+	method dispararHaciaAbajo(){
+		self.position(position.down(1))
+	}
+	
+	method dispararHaciaIzquierda(){
+		self.position(position.left(1))
+	}
+	
+	method dispararHaciaDerecha(){
+		self.position(position.right(1))
+	}
+	
+	
+}
 
 
 class Vida {

@@ -19,20 +19,22 @@ program juego {
 	game.addVisual(bicho1)
 	game.addVisual(bicho2)
 	game.addVisual(bicho3)
-	game.addVisual(pared1)
-	game.addVisual(pared2)
+//	game.addVisual(pared1)
+	//game.addVisual(pared2)	
+	game.addVisual(zanahoria)
+	
 	
 	//musica de fondo
-	const ost = game.sound("Ost.mp3")
+	const ost = game.sound("assets/Ost.mp3")
 	ost.shouldLoop(true)
 	game.schedule(500, { ost.play()} )
 	
 	
 	//teclado
-	keyboard.up().onPressDo( { conejo.moverseHaciaArriba() } )
-	keyboard.down().onPressDo( { conejo.moverseHaciaAbajo() } )
-	keyboard.left().onPressDo( { conejo.moverseHaciaIzquierda() } )
-	keyboard.right().onPressDo( { conejo.moverseHaciaDerecha() } )
+	keyboard.up().onPressDo( { conejo.moverseHaciaArriba() game.onTick(10, "disparar arriba" , { (conejo.municion()).forEach( {bala => bala.dispararHaciaArriba()}) } )   } )
+	keyboard.down().onPressDo( { conejo.moverseHaciaAbajo() game.onTick(10, "disparar abajo" , { zanahoria.dispararHaciaAbajo() } ) } )
+	keyboard.left().onPressDo( { conejo.moverseHaciaIzquierda() game.onTick(10, "disparar izq" , { zanahoria.dispararHaciaIzquierda() } )} )
+	keyboard.right().onPressDo( { conejo.moverseHaciaDerecha() game.onTick(10, "disparar der" , { zanahoria.dispararHaciaDerecha() } ) } )
 	keyboard.plusKey().onPressDo({ost.volume(1)})
 	keyboard.m().onPressDo({ost.volume(0)})
 	keyboard.minusKey().onPressDo({ost.volume(0.5)})
