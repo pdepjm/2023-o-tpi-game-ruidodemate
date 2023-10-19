@@ -6,7 +6,7 @@ import Paredes.*
 program juego {
 	game.title("Bad Bunny")
 	
-	game.width(25)
+	game.width(24)
 	game.height(20)
 	
 	
