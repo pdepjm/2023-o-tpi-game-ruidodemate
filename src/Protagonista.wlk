@@ -2,12 +2,13 @@ import wollok.game.*
 
 object conejo {
 	
-	var corazones = 3
+	var corazones = [corazon1, corazon2, corazon3]
 	var property position = game.at(0,0)
 	method municion() = [zanahoria, zanahoria, zanahoria, zanahoria]
 	
 	method recibeDanio() {
-		corazones -= 1
+		var corazon = corazones.head() 
+		corazon = "corazon_perdido.png"
 		//corazon1.image() = "corazon_perdido.png"    "como cambio el color
 		
 		position = game.at(0,0)
@@ -29,6 +30,9 @@ object conejo {
 		self.position(position.right(1))
 	}
 	
+	method position() = position
+	
+	method chocaCon(cosa) {cosa.position() == self.position()} 
 	
 	method image() = "assets/conejo.png"
 	

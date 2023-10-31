@@ -4,8 +4,13 @@ class Paredes {
 	
 	var property position
 	
-	method image() = "bloque.png"
+	method position() = position
+	
+	method image() = "assets/bloque.png"
+
 }
+
+
 const pared1 = new Paredes(position = game.at(0,0))
 const pared2 = new Paredes(position = game.at(0,2))
 const pared3 = new Paredes(position = game.at(0,4))
