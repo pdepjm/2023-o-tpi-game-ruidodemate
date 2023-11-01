@@ -1,14 +1,18 @@
 import wollok.game.*
-import Protagonista.*
 
 class Bicho {
 
-	var vida = 2
+	// const vida = 2
+	const imagen = "assets/bicho.png" //es var, faltan hacer que se mueva
 	
 	var property position
 
-	method image() = "assets/bicho.png"
+	method image() = imagen
 	
+	method choque(conejo){
+		conejo.recibeDanio()
+	}
+
 	/*method recibeAtaque() {
 		if(position == zanahoria.position){
 			vida-=1
@@ -16,12 +20,15 @@ class Bicho {
 		vida -= 1
 	}*/
 	
-	method recibeDanio() {
+	/* method recibeDanio() {
 		vida -=1
 	}
 
-	method morir() = if (vida == 0) position = game.at(30,30) else position
+	method morir() = if (vida == 0) position = game.at(30,30) else position */
+	
 }
+
+
 
 const bicho1 = new Bicho(position = game.at(20,14))
 const bicho2 = new Bicho(position = game.at(14,6))
