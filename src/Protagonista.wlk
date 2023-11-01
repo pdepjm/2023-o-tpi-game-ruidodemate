@@ -3,8 +3,10 @@ import wollok.game.*
 object conejo {
 	
 	var corazones = [corazon1, corazon2, corazon3]
-	var property position = game.at(0,0)
-	method municion() = [zanahoria, zanahoria, zanahoria, zanahoria]
+	var property position = game.at(2,2)
+	var property anterior = position
+	//method municion() = [zanahoria, zanahoria, zanahoria, zanahoria]
+	method position()= position
 	
 	method recibeDanio() {
 		var corazon = corazones.head() 
@@ -14,29 +16,37 @@ object conejo {
 		position = game.at(0,0)
 	}
 	
+	method anterior(){
+		 position = anterior
+	}
+	
 	method moverseHaciaArriba(){
+		anterior = position
 		self.position(position.up(1))
 	}
 	
 	method moverseHaciaAbajo(){
+		anterior = position
 		self.position(position.down(1))
 	}
 	
 	method moverseHaciaIzquierda(){
+		anterior = position
 		self.position(position.left(1))
 	}
 	
 	method moverseHaciaDerecha(){
+		anterior = position
 		self.position(position.right(1))
 	}
-	
+	method choque(x){}
 	
 	method image() = "assets/conejo.png"
 	
 	
 }
 
-object zanahoria {
+/*object zanahoria {
 	
 	var property position = conejo.position()
 	
@@ -55,12 +65,13 @@ object zanahoria {
 	}
 	
 	method dispararHaciaDerecha(){
-		self.position(position.right(1))
+		//if()
+			self.position(position.right(1)
 	}
 	
 	
 }
-
+*/
 
 class Vida {
 	

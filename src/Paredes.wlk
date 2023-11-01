@@ -4,7 +4,12 @@ class Paredes {
 	
 	var property position
 	method image() = "assets/bloque.png"
-
+	
+	method position()= position
+	
+	method choque(conejo){
+        conejo.anterior()
+    }
 }
 
 const paredes = [pared1, pared2, pared3, pared4, pared5, pared6, pared7, pared8, pared9, pared10, pared11, pared12, pared13, pared14, pared15, pared16, pared17, pared18, pared19, 
