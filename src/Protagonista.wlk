@@ -6,18 +6,24 @@ object conejo {
 	var property position = game.at(2,2)
 	var property anterior = position
 	//method municion() = [zanahoria, zanahoria, zanahoria, zanahoria]
+	
+	var imagen = "assets/conejo.png"
 	method position()= position
 	
 	method recibeDanio() {
-		var corazon = corazones.head() 
-		corazon = "corazon_perdido.png"
-		//corazon1.image() = "corazon_perdido.png"    "como cambio el color
+		corazones.head().delete()
+		corazones = corazones.drop(1)	
 		
-		position = game.at(0,0)
+		if (corazones.size() == 0){
+			//inicio
+		}
+		
+		position = game.at(2,2)		
 	}
 	
 	method anterior(){
-		 position = anterior
+		position = anterior
+		return anterior
 	}
 	
 	method moverseHaciaArriba(){
@@ -33,15 +39,17 @@ object conejo {
 	method moverseHaciaIzquierda(){
 		anterior = position
 		self.position(position.left(1))
+		imagen = "assets/conejoi.png"
 	}
 	
 	method moverseHaciaDerecha(){
 		anterior = position
 		self.position(position.right(1))
+		imagen = "assets/conejo.png"
 	}
 	method choque(x){}
 	
-	method image() = "assets/conejo.png"
+	method image() = imagen
 	
 	
 }
@@ -77,6 +85,7 @@ class Vida {
 	
 	var property position 
 	
+	method delete(){position =  game.at(1000,1000)}
 	method image() = "assets/corazon.png"
 	
 }
