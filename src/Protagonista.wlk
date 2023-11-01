@@ -30,9 +30,6 @@ object conejo {
 		self.position(position.right(1))
 	}
 	
-	method position() = position
-	
-	method chocaCon(cosa) {cosa.position() == self.position()} 
 	
 	method image() = "assets/conejo.png"
 	

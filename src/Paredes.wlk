@@ -3,13 +3,15 @@ import wollok.game.*
 class Paredes {
 	
 	var property position
-	
-	method position() = position
-	
 	method image() = "assets/bloque.png"
 
 }
 
+const paredes = [pared1, pared2, pared3, pared4, pared5, pared6, pared7, pared8, pared9, pared10, pared11, pared12, pared13, pared14, pared15, pared16, pared17, pared18, pared19, 
+    pared20, pared21, pared22, pared23, pared24, pared25, pared26, pared27, pared28, pared29, pared30, pared31, pared32, pared33, pared34, pared35, pared36, pared37, 
+    pared38, pared39, pared40, pared41, pared42, pared43, pared44, pared45, pared46, pared47, pared48, pared49, pared50, pared51, pared52, pared53, pared54, pared55, 
+    pared56, pared57, pared58, pared59, pared60, pared61, pared62, pared63, pared64, 
+    pared65, pared66, pared67, pared68, pared69]
 
 const pared1 = new Paredes(position = game.at(0,0))
 const pared2 = new Paredes(position = game.at(0,2))
