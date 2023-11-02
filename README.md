@@ -8,18 +8,26 @@
 
 ## Capturas
 
-(agregar)
+![image](https://github.com/pdepjm/2023-o-tpi-game-ruidodemate/assets/102927780/907b44d2-8dc1-4958-83f7-ad1e666cf302)
+
+
+![image](https://github.com/pdepjm/2023-o-tpi-game-ruidodemate/assets/102927780/10437c3d-b2dc-4503-a5db-eff38372fb25)
+
+
+![image](https://github.com/pdepjm/2023-o-tpi-game-ruidodemate/assets/102927780/b0ccea3b-b768-424c-83c6-65f7f41596fd)
+
+
 
 ## Reglas de Juego / Instrucciones
 
 El juego consiste en agarrar las dinamitas exparsidas por el mapa para acabar con la amenaza de los bichos AV21
-Comienza la aventura eligiendo el nivel, luego deberás movilizarte por el tablero en busca de recolectar
-las 3 TNTs para destruir a los enemigos. Pero ten cuidado, los AV21 también se moverán para destruirte a ti, al tocarlos
+Comienza la aventura en el laberinto, deberás movilizarte por el tablero en busca de recolectar las 3 TNTs para
+destruir a los enemigos. Pero ten cuidado, los AV21 también se moverán para destruirte a ti, al tocarlos
 volveras a la línea de salida y perderás un corazón, tienes 3 vidas paras terminar con la desgracia que se avecina.
 
 ## Teclas
 
-- barra espaciadora : selección de nivel
+- barra espaciadora : empieza el juego
 - (p): pausa la música
 - (r): reanuda la música
 - (m): muetea la música
