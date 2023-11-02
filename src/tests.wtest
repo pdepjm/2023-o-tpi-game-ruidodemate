@@ -1,6 +1,81 @@
+import wollok.game.*
+import bichos.*
+import Protagonista.*
+import Paredes.*
+import niveles.*
+import iniciador.*
 
-test "testX" {
-
-	assert.that(true)
-
+describe "Juego Conejo Malo" {
+	const explosivos= 0
+	
+	method initialize(){
+    game.clear()
+    juego.iniciar()
+   	juego.cargarVisuales()
+    
+  }
+  
+  
+   test "agarro la primer TNT"{
+   		
+   		conejo.moverseHaciaDerecha()
+   		conejo.moverseHaciaDerecha()
+   		conejo.moverseHaciaArriba()
+   		conejo.moverseHaciaArriba()
+   		conejo.moverseHaciaDerecha()
+   		conejo.moverseHaciaDerecha()
+   		conejo.moverseHaciaDerecha()
+   		conejo.moverseHaciaAbajo()
+   		conejo.moverseHaciaAbajo()
+   		conejo.moverseHaciaAbajo()
+   		conejo.moverseHaciaDerecha()
+   		conejo.moverseHaciaDerecha()
+   		conejo.moverseHaciaDerecha()
+   		conejo.moverseHaciaDerecha()
+   		conejo.moverseHaciaArriba()
+   		conejo.moverseHaciaArriba()
+   		conejo.moverseHaciaIzquierda()
+   		conejo.moverseHaciaIzquierda()
+   		conejo.agarraTNT(tnt1)
+   		assert.that(explosivos == 1)
+   }
+   
+   test "pierdo una vida y vuelvo al inicio"{
+   		conejo.moverseHaciaDerecha()
+   		conejo.moverseHaciaDerecha()
+   		conejo.moverseHaciaArriba()
+   		conejo.moverseHaciaArriba()
+   		conejo.moverseHaciaDerecha()
+   		conejo.moverseHaciaDerecha()
+   		conejo.moverseHaciaDerecha()
+   		conejo.moverseHaciaAbajo()
+   		conejo.moverseHaciaAbajo()
+   		conejo.moverseHaciaAbajo()
+   		conejo.moverseHaciaDerecha()
+   		conejo.moverseHaciaDerecha()
+   		conejo.moverseHaciaDerecha()
+   		conejo.moverseHaciaDerecha()
+   		conejo.moverseHaciaArriba()
+   		conejo.moverseHaciaArriba()
+   		conejo.moverseHaciaArriba()
+   		conejo.moverseHaciaIzquierda()
+   		conejo.moverseHaciaIzquierda()
+   		bicho1.choque(conejo)
+   		assert.notThat(game.hasVisual(corazon1))
+   }
+   	
+   	test "agarro las 3 TNT y los 3 bichos mueren"{
+   		conejo.agarraTNT(tnt1)
+   		conejo.agarraTNT(tnt2)
+   		conejo.agarraTNT(tnt3)
+   		bichos.forEach({bicho=> bicho.morir()})
+   		assert.that(bichos.all({bicho => bicho.image() == "assets/explosion.png"}))
+   	}
+   	
+   	test "choco con los bichos 3 veces y muero"{
+   		bicho1.choque(conejo)
+   		bicho1.choque(conejo)
+   		bicho2.choque(conejo)
+   		assert.that(conejo.image() == "assets/fantasma.png")
+   	}
 }

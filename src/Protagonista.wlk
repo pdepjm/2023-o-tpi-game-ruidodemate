@@ -16,6 +16,9 @@ object conejo {
 		corazones = corazones.drop(1)	
 		
 		if (corazones.size() == 0){
+			game.removeVisual(self)
+			imagen = "assets/fantasma.png"
+			game.addVisual(self)
 			game.schedule(200,{=>game.say(self,"(x_x)")})
 			game.schedule(2000,{=>juego.volverAlMenu()})
 		}
@@ -30,6 +33,7 @@ object conejo {
 	method reiniciar() {
 		corazones = [corazon1, corazon2, corazon3]
 		explosivos = 0
+		imagen = "assets/conejo.png"
 	}
 	
 	method cantCorazones() = corazones.size()
@@ -52,13 +56,20 @@ object conejo {
 	method moverseHaciaIzquierda(){
 		anterior = position
 		self.position(position.left(1))
-		imagen = "assets/conejoi.png"
+		if(corazones.size() == 0){
+			imagen = "assets/fantasmai.png"
+			}else{imagen = "assets/conejoi.png"}
 	}
 	
 	method moverseHaciaDerecha(){
 		anterior = position
 		self.position(position.right(1))
-		imagen = "assets/conejo.png"
+		
+		if(corazones.size() == 0){
+			imagen = "assets/fantasma.png"
+		}else{
+			imagen = "assets/conejo.png"
+		}
 	}
 	
 	
