@@ -58,14 +58,14 @@ object conejo {
 		explosivos += 1
 		game.removeVisual(tnt)
 		game.schedule(200,{=>game.say(self,"(^-^)")})
-		if(explosivos == 3){
+		if(explosivos == 5){
 			bichos.forEach({bicho => bicho.morir()})
 			game.schedule(400,{=>game.say(self,"¡Logramos salvar el día!")})
 			game.schedule(3000,{=>juego.volverAlMenu()})
 		}
 	}
 	
-	method ganador() = explosivos == 3
+	method ganador() = explosivos == 5
 	
 }
 
@@ -79,9 +79,11 @@ class TNT{
 }
 
 
-const tnt1 = new TNT(position = game.at(1,1))
+const tnt1 = new TNT(position = game.at(1,7))
 const tnt2 = new TNT(position = game.at(13,6))
 const tnt3 = new TNT(position = game.at(7,11))
+const tnt4 = new TNT(position = game.at(5,3))
+const tnt5 = new TNT(position = game.at(13,2))
 
 class Vida {
 	

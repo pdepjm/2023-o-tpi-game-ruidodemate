@@ -8,7 +8,7 @@ import direcciones.*
 
 object juego {
 	
-	const ost = game.sound("Ost.mp3")
+	const ost = game.sound("assets/efecto.mp3")
 		
 	method iniciar(){
 		
@@ -40,14 +40,22 @@ object juego {
      game.addVisual(bicho1)
    	 game.addVisual(bicho2)
   	 game.addVisual(bicho3)
+  	 game.addVisual(bicho4)
+  	 game.addVisual(bicho5)
+  	 game.addVisual(bicho6)
   	 game.addVisual(tnt1)
    	 game.addVisual(tnt2)
   	 game.addVisual(tnt3)
+  	 game.addVisual(tnt4)
+  	 game.addVisual(tnt5)
      game.onCollideDo(conejo, { pared => pared.choque(conejo) })
  
     bicho1.movimientoBicho1()
     bicho2.movimientoBicho2()
     bicho3.movimientoBicho3()
+    bicho4.movimientoBicho4()
+    bicho5.movimientoBicho5()
+    bicho6.movimientoBicho6()
     
      self.teclas()
 }
