@@ -1,7 +1,4 @@
 import wollok.game.*
-import bichos.*
-import Protagonista.*
-import Paredes.*
 import iniciador.*
 
 program badBunny {

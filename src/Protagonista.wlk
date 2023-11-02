@@ -1,25 +1,31 @@
 import wollok.game.*
+import iniciador.*
 
 object conejo {
 	
 	var corazones = [corazon1, corazon2, corazon3]
-	var property position = game.at(2,2)
+	var property position = game.at(0,10)
 	var property anterior = position
-	//method municion() = [zanahoria, zanahoria, zanahoria, zanahoria]
 	
 	var imagen = "assets/conejo.png"
-	method position()= position
+	
 	
 	method recibeDanio() {
-		corazones.head().delete()
+		game.removeVisual(corazones.head())
 		corazones = corazones.drop(1)	
 		
 		if (corazones.size() == 0){
-			//inicio
+			juego.volverAlMenu()
 		}
 		
-		position = game.at(2,2)		
+		position = game.at(0,10)		
 	}
+	
+	method reiniciar() {
+		corazones = [corazon1, corazon2, corazon3]
+	}
+	
+	method cantCorazones() = corazones.size()
 	
 	method anterior(){
 		position = anterior
@@ -54,43 +60,19 @@ object conejo {
 	
 }
 
-/*object zanahoria {
-	
-	var property position = conejo.position()
-	
-	method image() = "assets/bala.png"
-	
-	method dispararHaciaArriba(){
-		self.position(position.up(1))
-	}
-	
-	method dispararHaciaAbajo(){
-		self.position(position.down(1))
-	}
-	
-	method dispararHaciaIzquierda(){
-		self.position(position.left(1))
-	}
-	
-	method dispararHaciaDerecha(){
-		//if()
-			self.position(position.right(1)
-	}
-	
-	
-}
+/*class huevo
 */
 
 class Vida {
 	
-	var property position 
-	
-	method delete(){position =  game.at(1000,1000)}
+	var property position
+	var property posicionInicial = game.at(1000,1000)
+
 	method image() = "assets/corazon.png"
 	
 }
 
 
-const corazon3 = new Vida(position = game.at(23,19))
-const corazon2 = new Vida(position = game.at(22,19))
-const corazon1 = new Vida(position = game.at(21,19))
+const corazon3 = new Vida(position = game.at(14,13))
+const corazon2 = new Vida(position = game.at(13,13))
+const corazon1 = new Vida(position = game.at(12,13))
