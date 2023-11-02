@@ -1,6 +1,6 @@
 import wollok.game.*
 import iniciador.*
 
-program badBunny {
+program conejoMalo {
 	juego.iniciar()
 }
