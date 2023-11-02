@@ -1,10 +1,10 @@
-# Nombre del juego (<- borrar y completar)
+# CONEJO MALO
 
 ## Equipo de desarrollo
 
-- Alguien
-- Persona
-- etc.
+- Zoe Dominguez
+- Junior Rodriguez
+- Emilia Andersen
 
 ## Capturas
 
