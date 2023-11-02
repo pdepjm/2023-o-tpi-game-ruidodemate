@@ -101,7 +101,7 @@ class TNT{
 
 
 const tnt1 = new TNT(position = game.at(1,1))
-const tnt2 = new TNT(position = game.at(13,4))
+const tnt2 = new TNT(position = game.at(13,6))
 const tnt3 = new TNT(position = game.at(7,11))
 
 class Vida {
