@@ -71,4 +71,4 @@ const bichos = [bicho1, bicho2, bicho3]
 
 const bicho1 = new Bicho(position = game.at(2,4))
 const bicho2 = new Bicho(position = game.at(12,6))
-const bicho3 = new Bicho(position = game.at(8,12))
+const bicho3 = new Bicho(position = game.at(8,9))
