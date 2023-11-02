@@ -8,7 +8,7 @@
 
 ## Capturas
 
-![image](https://github.com/pdepjm/2023-o-tpi-game-ruidodemate/assets/102927780/907b44d2-8dc1-4958-83f7-ad1e666cf302)
+![image](https://github.com/pdepjm/2023-o-tpi-game-ruidodemate/assets/102927780/374c06d2-5bb1-40b2-a8bc-764397e41f0e)
 
 
 ![image](https://github.com/pdepjm/2023-o-tpi-game-ruidodemate/assets/102927780/10437c3d-b2dc-4503-a5db-eff38372fb25)
