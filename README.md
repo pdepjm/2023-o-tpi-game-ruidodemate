@@ -11,11 +11,7 @@
 ![image](https://github.com/pdepjm/2023-o-tpi-game-ruidodemate/assets/102927780/374c06d2-5bb1-40b2-a8bc-764397e41f0e)
 
 
-![image](https://github.com/pdepjm/2023-o-tpi-game-ruidodemate/assets/102927780/10437c3d-b2dc-4503-a5db-eff38372fb25)
-
-
-![image](https://github.com/pdepjm/2023-o-tpi-game-ruidodemate/assets/102927780/b0ccea3b-b768-424c-83c6-65f7f41596fd)
-
+![image](https://github.com/pdepjm/2023-o-tpi-game-ruidodemate/blob/master/assets/foto.png)
 
 
 ## Reglas de Juego / Instrucciones
