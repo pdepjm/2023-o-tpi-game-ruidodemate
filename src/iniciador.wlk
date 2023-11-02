@@ -3,6 +3,7 @@ import bichos.*
 import Protagonista.*
 import Paredes.*
 import niveles.*
+import direcciones.*
 
 
 object juego {
@@ -25,6 +26,8 @@ object juego {
 		game.start()
 		}
 	
+
+	
 	method cargarVisuales() {
 	 game.clear()
    	 game.addVisual(nivel)
@@ -41,6 +44,11 @@ object juego {
    	 game.addVisual(tnt2)
   	 game.addVisual(tnt3)
      game.onCollideDo(conejo, { pared => pared.choque(conejo) })
+ 
+    bicho1.movimientoBicho1()
+    bicho2.movimientoBicho2()
+    bicho3.movimientoBicho3()
+    
      self.teclas()
 }
 	
@@ -50,10 +58,10 @@ object juego {
 	}
 	
 	method teclas() {
-	keyboard.up().onPressDo( { conejo.moverseHaciaArriba() } )
-	keyboard.down().onPressDo( { conejo.moverseHaciaAbajo() } )
-	keyboard.left().onPressDo( { conejo.moverseHaciaIzquierda() } )
-	keyboard.right().onPressDo( { conejo.moverseHaciaDerecha() } )
+	keyboard.up().onPressDo( { conejo.moverA(arriba) } )
+	keyboard.down().onPressDo( { conejo.moverA(abajo) } )
+	keyboard.left().onPressDo( { conejo.moverA(izquierda) } )
+	keyboard.right().onPressDo( { conejo.moverA(derecha) } )
   	keyboard.plusKey().onPressDo({ost.volume(1)})
 	keyboard.minusKey().onPressDo({ost.volume(0.5)})
 	keyboard.p().onPressDo({ost.pause()})

@@ -1,6 +1,8 @@
 import wollok.game.*
 import iniciador.*
 import bichos.*
+import direcciones.*
+
 
 object conejo {
 	
@@ -8,8 +10,10 @@ object conejo {
 	var property position = game.at(0,10)
 	var property anterior = position
 	var explosivos = 0
+
 	var imagen = "assets/conejo.png"
 	
+
 	
 	method recibeDanio() {
 		game.removeVisual(corazones.head())
@@ -17,10 +21,10 @@ object conejo {
 		
 		if (corazones.size() == 0){
 			game.removeVisual(self)
-			imagen = "assets/fantasma.png"
-			game.addVisual(self)
-			game.schedule(200,{=>game.say(self,"(x_x)")})
-			game.schedule(2000,{=>juego.volverAlMenu()})
+            imagen = "assets/fantasma.png"
+            game.addVisual(self)
+            game.schedule(200,{=>game.say(self,"(x_x)")})
+            game.schedule(2000,{=>juego.volverAlMenu()})
 		}
 		
 		position = game.at(0,10)	
@@ -28,12 +32,10 @@ object conejo {
 	}
 	
 
-		
-	
 	method reiniciar() {
 		corazones = [corazon1, corazon2, corazon3]
 		explosivos = 0
-		imagen = "assets/conejo.png"
+		position = game.at(0,10)
 	}
 	
 	method cantCorazones() = corazones.size()
@@ -43,35 +45,14 @@ object conejo {
 		return anterior
 	}
 	
-	method moverseHaciaArriba(){
+	
+		method moverA(dir) {
 		anterior = position
-		self.position(position.up(1))
+		position = dir.siguientePosicion(position) 
+		imagen = if (dir.cambiarImagen() != null) dir.cambiarImagen() else imagen
 	}
 	
-	method moverseHaciaAbajo(){
-		anterior = position
-		self.position(position.down(1))
-	}
-	
-	method moverseHaciaIzquierda(){
-		anterior = position
-		self.position(position.left(1))
-		if(corazones.size() == 0){
-			imagen = "assets/fantasmai.png"
-			}else{imagen = "assets/conejoi.png"}
-	}
-	
-	method moverseHaciaDerecha(){
-		anterior = position
-		self.position(position.right(1))
-		
-		if(corazones.size() == 0){
-			imagen = "assets/fantasma.png"
-		}else{
-			imagen = "assets/conejo.png"
-		}
-	}
-	
+	method image() = imagen
 	
 	method agarraTNT(tnt){
 		explosivos += 1
@@ -85,8 +66,6 @@ object conejo {
 	}
 	
 	method ganador() = explosivos == 3
-	method image() = imagen
-	
 	
 }
 
@@ -114,6 +93,6 @@ class Vida {
 }
 
 
-const corazon3 = new Vida(position = game.at(14,13))
-const corazon2 = new Vida(position = game.at(13,13))
-const corazon1 = new Vida(position = game.at(12,13))
+const corazon3 = new Vida(position = game.at(14,0))
+const corazon2 = new Vida(position = game.at(13,0))
+const corazon1 = new Vida(position = game.at(12,0))
