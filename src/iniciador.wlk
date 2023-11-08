@@ -8,7 +8,7 @@ import direcciones.*
 
 object juego {
 	
-	const ost = game.sound("assets/efecto.mp3")
+	const ost = game.sound("assets/Ost.mp3")
 		
 	method iniciar(){
 		
