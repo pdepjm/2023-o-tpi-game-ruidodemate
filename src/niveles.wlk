@@ -13,4 +13,14 @@ object nivel{
 	method image() = "assets/pasto.png"
 }
 
-//class Nivel{}
+object win{
+	var property position = game.at(2,6)
+	method image() = "assets/winner.png"
+	method recibeDanio(){}
+}
+
+object lose{
+	var property position = game.at(2,6)
+	method image() = "assets/loser.png"
+	method recibeDanio(){}
+}

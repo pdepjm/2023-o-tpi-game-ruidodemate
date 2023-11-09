@@ -25,12 +25,10 @@ object juego {
 		
 		game.start()
 		}
-	
-
-	
+		
 	method cargarVisuales() {
 	 game.clear()
-   	 game.addVisual(nivel)
+   	 game.addVisual(nivel)  	 
    	 game.addVisual(conejo)
    	 
      paredes.forEach({ pared => game.addVisual(pared) })
@@ -50,12 +48,12 @@ object juego {
   	 game.addVisual(tnt5)
      game.onCollideDo(conejo, { pared => pared.choque(conejo) })
  
-    bicho1.movimientoBicho1()
-    bicho2.movimientoBicho2()
-    bicho3.movimientoBicho3()
-    bicho4.movimientoBicho4()
-    bicho5.movimientoBicho5()
-    bicho6.movimientoBicho6()
+     bicho1.moverBicho()
+     bicho2.moverBicho()
+     bicho3.moverBicho()
+     bicho4.moverBicho()
+     bicho5.moverBicho()
+     bicho6.moverBicho()
     
      self.teclas()
 }
@@ -80,7 +78,6 @@ object juego {
 	}
   
 	method volverAlMenu(){
-		
 		game.clear()
 		self.cargarMenu()
 		conejo.reiniciar()
