@@ -1,0 +1,6 @@
+import wollok.game.*
+import iniciador.*
+
+program conejoMalo {
+	juego.iniciar()
+}
